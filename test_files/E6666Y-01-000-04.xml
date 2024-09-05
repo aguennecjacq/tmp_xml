@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+    <identCode>
+        <model>E6666Y</model>
+        <ata>01</ata>
+        <subSystem>000</subSystem>
+        <assyCode>04</assyCode>
+    </identCode>
+    <modifications>
+        <updateNumber>001</updateNumber>
+        <updateNumber>002</updateNumber>
+        <updateNumber>003</updateNumber>
+    </modifications>
+    <content>
+    <section sectionNumber="01">
+        <para> Love is like a rose; it is beautiful but has thorns. </para>
+        <para updateNumberId="001" barreDeRev="ajout"> In war, the first casualty is truth.  !</para>
+    </section>
+    <section sectionNumber="02">
+        <para> I  used to rule the world,
+            Seas would rise when I gave the word,
+            Now in the morning,
+            I sleep alone Sweep the streets I used to own
+        </para>
+        <para updateNumberId="003"> Fusion power is always 20 years away </para>
+    </section>
+    </content>
+</status>

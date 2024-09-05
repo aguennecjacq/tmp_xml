@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+    <identCode>
+        <model>E6666Y</model>
+        <ata>01</ata>
+        <subSystem>000</subSystem>
+        <assyCode>01</assyCode>
+    </identCode>
+    <modifications>
+        <updateNumber>001</updateNumber>
+        <updateNumber>002</updateNumber>
+        <updateNumber>003</updateNumber>
+    </modifications>
+    <content>
+    <section sectionNumber="01">
+        <para>Random text</para>
+        <para updateNumberId="001" barreDeRev="ajout"> Goodbye my friends</para>
+    </section>
+    <section sectionNumber="02">
+        <para> You can't be happy if you're never sad.</para>
+        <para updateNumberId="003"> A cup of coffee a day is not enough</para>
+    </section>
+</content>
+</status>

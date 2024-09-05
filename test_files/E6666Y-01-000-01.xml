@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+    <identCode>
+        <model>E6666Y</model>
+        <ata>01</ata>
+        <subSystem>000</subSystem>
+        <assyCode>01</assyCode>
+    </identCode>
+    <modifications>
+        <updateNumber>001</updateNumber>
+        <updateNumber>002</updateNumber>
+        <updateNumber>003</updateNumber>
+    </modifications>
+    <content>
+    <section sectionNumber="01">
+        <para> If I press the button, it goes boom.</para>
+        <para updateNumberId="001" barreDeRev="ajout"> Beware of insects</para>
+    </section>
+    <section sectionNumber="02">
+        <para> Not really a problem</para>
+        <para updateNumberId="003"> Don't worry, be happy</para>
+    </section>
+</content>
+</status>

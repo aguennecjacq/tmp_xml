@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+    <identCode>
+        <model>E6666Y</model>
+        <ata>01</ata>
+        <subSystem>000</subSystem>
+        <assyCode>01</assyCode>
+    </identCode>
+    <modifications>
+        <updateNumber>001</updateNumber>
+        <updateNumber>002</updateNumber>
+        <updateNumber>003</updateNumber>
+    </modifications>
+    <content>
+    <section sectionNumber="01">
+        <para> Damn this is getting long. </para>
+        <para updateNumberId="001" barreDeRev="ajout"> Attention please ! Pirates are boarding the ship  ! </para>
+    </section>
+    <section sectionNumber="02">
+        <para> True love never runs smooth. You have to put up with the smell...</para>
+        <para updateNumberId="003"> Love is like a fire; it must be fed to keep it burning. </para>
+    </section>
+</content>
+</status>
