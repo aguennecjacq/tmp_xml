@@ -13,16 +13,17 @@ def create_folder(folder_path):
         create_folder(folder_path)
 
 
-def remove_tag_from_xml_file(root, tags):
+def remove_tag_from_xml_file(tree, tags):
 
     # find all corresponding elements
+    parent_map = {c: p for p in tree.iter() for c in p}
     deleted_elements = []
     for tag in tags:
-        deleted_elements += root.findall(tag)
+        deleted_elements += tree.findall(f".//{tag}")
 
     # remove elements
     for x in deleted_elements:
-        root.remove(x)
+        parent_map[x].remove(x)
 
 def remove_attributes_from_file(file_path, attributes):
     with open(file_path, "r") as file_:
@@ -52,14 +53,13 @@ def modif_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, r
 
     # enlever les balises modifications
     tree = ET.parse(xml_file.path)
-    root = tree.getroot()
 
-    remove_tag_from_xml_file(root, removed_elements)
+    remove_tag_from_xml_file(tree, removed_elements)
 
     # Save xml file with current modification
     new_xml_path = f"{output_folder}/{xml_file.name.replace(old_model_, new_model_)}"
     with open(new_xml_path, "wb") as output_xml:
-        output_xml.write(ET.tostring(root))
+        tree.write(output_xml)
 
     # remove attributes
     remove_attributes_from_file(new_xml_path, removed_attrib)
