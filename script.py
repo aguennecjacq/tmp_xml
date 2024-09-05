@@ -13,7 +13,7 @@ def create_folder(folder_path):
         create_folder(folder_path)
 
 
-def remove_tag_from_xml_file(tree, tags):
+def remove_tags_from_xml_file(tree, tags):
 
     # find all corresponding elements
     parent_map = {c: p for p in tree.iter() for c in p}
@@ -24,6 +24,13 @@ def remove_tag_from_xml_file(tree, tags):
     # remove elements
     for x in deleted_elements:
         parent_map[x].remove(x)
+
+
+def remove_attributes_from_tree(tree, attributes):
+    for z in tree.iter():
+        for attrib in attributes:
+            if attrib in z.attrib:
+                del z.attrib[attrib]
 
 def remove_attributes_from_file(file_path, attributes):
     with open(file_path, "r") as file_:
@@ -45,24 +52,22 @@ def replace_text_in_file(file_path, old_text, new_text):
     for idx, line in enumerate(lines):
         lines[idx] = line.replace(old_text, new_text)
 
-    full_txt = "".join(lines)
     with open(file_path, "w") as file_:
-        file_.write(full_txt)
+        file_.writelines(lines)
 
 def modif_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, removed_attrib):
 
     # enlever les balises modifications
     tree = ET.parse(xml_file.path)
 
-    remove_tag_from_xml_file(tree, removed_elements)
-
+    remove_tags_from_xml_file(tree, removed_elements)
+    remove_attributes_from_tree(tree, removed_attrib)
     # Save xml file with current modification
     new_xml_path = f"{output_folder}/{xml_file.name.replace(old_model_, new_model_)}"
     with open(new_xml_path, "wb") as output_xml:
         tree.write(output_xml)
 
     # remove attributes
-    remove_attributes_from_file(new_xml_path, removed_attrib)
     replace_text_in_file(new_xml_path, old_model, new_model)
 
 if __name__ == "__main__":
