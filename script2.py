@@ -68,7 +68,7 @@ def modif_xml_file(xml_file_path:str, old_model_:str, new_model_:str, removed_el
 if __name__ == "__main__":
 
     # TODO: modify with necessary values
-    entry_folder = "./"
+    entry_folder = "./test_files"
     output_folder = "./output"
     old_model = 'E6666Y'
     new_model = 'E10000Y'
