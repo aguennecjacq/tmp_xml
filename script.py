@@ -55,13 +55,13 @@ def replace_text_in_file(file_path, old_text, new_text):
     with open(file_path, "w") as file_:
         file_.writelines(lines)
 
-def modif_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, removed_attrib):
+def modify_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, removed_attrib):
 
-    # enlever les balises modifications
     tree = ET.parse(xml_file.path)
 
     remove_tags_from_xml_file(tree, removed_elements)
     remove_attributes_from_tree(tree, removed_attrib)
+
     # Save xml file with current modification
     new_xml_path = f"{output_folder}/{xml_file.name.replace(old_model_, new_model_)}"
     with open(new_xml_path, "wb") as output_xml:
@@ -84,4 +84,4 @@ if __name__ == "__main__":
 
     for file in os.scandir(entry_folder):
         if file.is_file() and file.name.endswith(".xml"):
-            modif_xml_file(file, old_model, new_model, elements_to_be_removed, attributes_to_be_removed)
+            modify_xml_file(file, old_model, new_model, elements_to_be_removed, attributes_to_be_removed)
