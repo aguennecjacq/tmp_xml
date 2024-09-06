@@ -13,7 +13,7 @@ def create_folder(folder_path):
         create_folder(folder_path)
 
 # deprecated (not used)
-def remove_elements_from_xml_file(tree, tags):
+def remove_elements_from_xml_tree(tree, tags):
 
     # find all corresponding elements
     parent_map = {c: p for p in tree.iter() for c in p}
@@ -59,7 +59,7 @@ def modify_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, 
 
     tree = ET.parse(xml_file.path)
 
-    remove_elements_from_xml_file(tree, removed_elements)
+    remove_elements_from_xml_tree(tree, removed_elements)
     remove_attributes_from_tree(tree, removed_attrib)
 
     # Save xml file with current modification
