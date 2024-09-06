@@ -12,7 +12,6 @@ def create_folder(folder_path):
         create_folder(parent_folder)
         create_folder(folder_path)
 
-# deprecated (not used)
 def remove_elements_from_xml_tree(tree, tags):
 
     # find all corresponding elements
@@ -32,6 +31,7 @@ def remove_attributes_from_tree(tree, attributes):
             if attrib in z.attrib:
                 del z.attrib[attrib]
 
+# deprecated (not used in script)
 def remove_attributes_from_file(file_path, attributes):
     with open(file_path, "r") as file_:
         lines = file_.readlines()
