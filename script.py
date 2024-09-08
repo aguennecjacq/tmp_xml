@@ -72,6 +72,7 @@ def modify_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, 
     remove_elements_from_xml_tree(tree, removed_elements)
     remove_attributes_from_tree(tree, removed_attrib)
     replace_attrib_value(tree, "sectionNumber", "007")
+
     # Save xml file with current modification
     new_xml_path = f"{output_folder}/{xml_file.name.replace(old_model_, new_model_)}"
     with open(new_xml_path, "wb") as output_xml:
