@@ -12,6 +12,17 @@ def create_folder(folder_path):
         create_folder(parent_folder)
         create_folder(folder_path)
 
+def replace_text_in_element(tree, tag, new_text):
+
+    for node in tree.findall(f".//{tag}"):
+        node.text = new_text
+
+def replace_text_in_element_from_attrib(tree, attrib, new_text):
+
+    for node in tree.iter():
+        if attrib in node.attrib:
+            node.text = new_text
+
 def remove_elements_from_xml_tree(tree, tags):
 
     # find all corresponding elements
