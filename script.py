@@ -17,11 +17,10 @@ def replace_text_in_element(tree, tag, new_text):
     for node in tree.findall(f".//{tag}"):
         node.text = new_text
 
-def replace_text_in_element_from_attrib(tree, attrib, new_text):
-
+def replace_attrib_value(tree, attrib, new_value):
     for node in tree.iter():
         if attrib in node.attrib:
-            node.text = new_text
+            node.attrib[attrib] = new_value
 
 def remove_elements_from_xml_tree(tree, tags):
 
@@ -72,7 +71,7 @@ def modify_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, 
 
     remove_elements_from_xml_tree(tree, removed_elements)
     remove_attributes_from_tree(tree, removed_attrib)
-
+    replace_attrib_value(tree, "sectionNumber", "007")
     # Save xml file with current modification
     new_xml_path = f"{output_folder}/{xml_file.name.replace(old_model_, new_model_)}"
     with open(new_xml_path, "wb") as output_xml:
@@ -83,7 +82,6 @@ def modify_xml_file(xml_file, old_model_:str, new_model_:str, removed_elements, 
 
 if __name__ == "__main__":
 
-    # TODO: modify with necessary values
     entry_folder = "./test_files"
     output_folder = "./output"
     old_model = 'E6666Y'
